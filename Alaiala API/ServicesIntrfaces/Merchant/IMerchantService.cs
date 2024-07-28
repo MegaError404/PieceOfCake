@@ -1,7 +1,7 @@
-﻿namespace Alaiala_API.ServicesIntrfaces.Merchant
+﻿namespace PieceOfCakeAPI.ServicesIntrfaces.Merchant
 {
-    public interface IMerchantService
-    {
+	public interface IMerchantService
+	{
 
-    }
+	}
 }

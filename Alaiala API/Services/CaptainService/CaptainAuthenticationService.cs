@@ -1,38 +1,38 @@
-﻿using Alaiala_API.Data;
-using Alaiala_API.Enumerations;
-using Alaiala_API.Helper;
-using Alaiala_API.Interfaces;
-using Alaiala_API.Models;
-using Alaiala_API.Models.Merchants;
-using Alaiala_API.ModelsDTO.Captain;
-using Alaiala_API.ServicesIntrfaces.Captain;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PieceOfCakeAPI.Data;
+using PieceOfCakeAPI.Enumerations;
+using PieceOfCakeAPI.Helper;
+using PieceOfCakeAPI.Interfaces;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.Models.Merchants;
+using PieceOfCakeAPI.ModelsDTO.Captain;
+using PieceOfCakeAPI.ServicesIntrfaces.Captain;
 
-namespace Alaiala_API.Services.Captain
+namespace PieceOfCakeAPI.Services.CaptainService
 {
 	public class CaptainAuthenticationService : IRegisterService, ICaptainAuthenticationService
-    {
+	{
 		private readonly DataContext _dataContext;
 		private readonly ILogger<CaptainService> _logger;
-        private readonly IMapper _mapper;
+		private readonly IMapper _mapper;
 		private readonly IConfiguration _configuration;
 
 		public CaptainAuthenticationService(DataContext dataContext, ILogger<CaptainService> logger, IMapper mapper, IConfiguration configuration)
-        {
+		{
 			_dataContext = dataContext;
 			_logger = logger;
-            _mapper = mapper;
+			_mapper = mapper;
 			_configuration = configuration;
-        }
+		}
 
-        public static void RegisterMe(IServiceCollection services)
-        {
-            services.AddScoped<ICaptainAuthenticationService, CaptainAuthenticationService>();
-        }
+		public static void RegisterMe(IServiceCollection services)
+		{
+			services.AddScoped<ICaptainAuthenticationService, CaptainAuthenticationService>();
+		}
 
-        public async Task<ApiResponse<CaptainLogInResponse>> LogIn(CaptainLogInRequest request)
-        {
+		public async Task<ApiResponse<CaptainLogInResponse>> LogIn(CaptainLogInRequest request)
+		{
 			ApiResponse<CaptainLogInResponse> responese = new();
 
 			try
@@ -60,8 +60,8 @@ namespace Alaiala_API.Services.Captain
 			return responese;
 		}
 
-        public async Task<ApiResponse<CaptainRegisterResponse>> Register(CaptainRegisterRequest request)
-        {
+		public async Task<ApiResponse<CaptainRegisterResponse>> Register(CaptainRegisterRequest request)
+		{
 			var responese = new ApiResponse<CaptainRegisterResponse>();
 
 			try
@@ -104,5 +104,5 @@ namespace Alaiala_API.Services.Captain
 
 			return responese;
 		}
-    }
+	}
 }

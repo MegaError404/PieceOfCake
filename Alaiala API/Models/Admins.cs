@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models
+namespace PieceOfCakeAPI.Models
 {
-    public class Admins
-    {
-        [Required, Key]
-        public int Id { get; set; }
-        
+	public class Admins
+	{
+		[Required, Key]
+		public int Id { get; set; }
+
 		[Required]
 		public Guid GUID { get; set; } = Guid.Empty;
 
-		[Required,MaxLength(100),MinLength(4)]
-        public string Name { get; set; } = string.Empty;
+		[Required, MaxLength(100), MinLength(4)]
+		public string Name { get; set; } = string.Empty;
 
 		[Required]
 		public byte[] PasswordHash { get; set; } = Guid.Empty.ToByteArray();
@@ -19,10 +19,10 @@ namespace Alaiala_API.Models
 		[Required]
 		public byte[] PasswordSalt { get; set; } = Guid.Empty.ToByteArray();
 
-		[Required,Phone]
+		[Required, Phone]
 		public string PhoneNumber { get; set; } = string.Empty;
 
-		[Required,EmailAddress]
+		[Required, EmailAddress]
 		public string Email { get; set; } = string.Empty;
 	}
 }

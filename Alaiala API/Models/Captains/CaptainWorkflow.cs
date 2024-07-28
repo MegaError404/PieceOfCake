@@ -1,24 +1,24 @@
-﻿using Alaiala_API.Enumerations;
+﻿using PieceOfCakeAPI.Enumerations;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Alaiala_API.Models.Captains
+namespace PieceOfCakeAPI.Models.Captains
 {
-    public class CaptainWorkflow
-    {
-        [Required, Key]
-        public int Id { get; set; }
-       
-        [Required]
-        public Guid GUID { get; set; } = Guid.Empty;
+	public class CaptainWorkflow
+	{
+		[Required, Key]
+		public int Id { get; set; }
 
-        [Required]
-        public DateTime SubmitDate { get; set; } = DateTime.MaxValue;
+		[Required]
+		public Guid GUID { get; set; } = Guid.Empty;
 
-        [Required]
-        public WorkflowSubmitType SubmitType { get; set; } = WorkflowSubmitType.None;
-      
-        [Required]
-        public Captains Captain { get; set; }
-    }
+		[Required]
+		public DateTime SubmitDate { get; set; } = DateTime.MaxValue;
+
+		[Required]
+		public WorkflowSubmitType SubmitType { get; set; } = WorkflowSubmitType.None;
+
+		[Required]
+		public Captains Captain { get; set; }
+	}
 }

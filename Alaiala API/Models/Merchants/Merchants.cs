@@ -1,29 +1,29 @@
-﻿using Alaiala_API.Enumerations;
+﻿using PieceOfCakeAPI.Enumerations;
 using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models.Merchants
+namespace PieceOfCakeAPI.Models.Merchants
 {
-    public class Merchants
-    {
-        [Required, Key]
-        public int Id { get; set; }
-     
-        [Required]
-        public Guid GUID { get; set; } = Guid.Empty;
+	public class Merchants
+	{
+		[Required, Key]
+		public int Id { get; set; }
 
-        [ Required(ErrorMessage = "Merchants Name Is Required"),
-          MaxLength(100, ErrorMessage = "Max Length in Merchants Name 100 Character"),
-          MinLength(4, ErrorMessage = "Min Length in Merchants Name 4 Character")
-        ]
-        public string Name { get; set; } = string.Empty;
+		[Required]
+		public Guid GUID { get; set; } = Guid.Empty;
 
-        [Required(ErrorMessage = "Primary PhoneNumber Is Required"), Phone]
-        public string PrimaryPhoneNumber { get; set; } = string.Empty;
-        [Phone]
-        public string SecondaryPhoneNumber { get; set; } = string.Empty;
+		[Required(ErrorMessage = "Merchants Name Is Required"),
+		  MaxLength(100, ErrorMessage = "Max Length in Merchants Name 100 Character"),
+		  MinLength(4, ErrorMessage = "Min Length in Merchants Name 4 Character")
+		]
+		public string Name { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "ActivetyStatus Is Required")]
-        public ActivetyStatus ActivetyStatus { get; set; } = ActivetyStatus.None;
+		[Required(ErrorMessage = "Primary PhoneNumber Is Required"), Phone]
+		public string PrimaryPhoneNumber { get; set; } = string.Empty;
+		[Phone]
+		public string SecondaryPhoneNumber { get; set; } = string.Empty;
+
+		[Required(ErrorMessage = "ActivetyStatus Is Required")]
+		public ActivetyStatus ActivetyStatus { get; set; } = ActivetyStatus.None;
 
 		[Required]
 		public byte[] PasswordHash { get; set; } = Guid.Empty.ToByteArray();

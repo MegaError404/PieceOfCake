@@ -1,24 +1,24 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 using System.Security.Claims;
 
-namespace Alaiala_API.ModelsDTO.Merchant
+namespace PieceOfCakeAPI.ModelsDTO.Merchant
 {
-    public struct MerchantLogInRequest : IDtoRequest
-    {
-        public MerchantLogInRequest()
-        {
+	public struct MerchantLogInRequest : IDtoRequest
+	{
+		public MerchantLogInRequest()
+		{
 
-        }
+		}
 
-        public string PrimaryPhoneNumber { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+		public string PrimaryPhoneNumber { get; set; } = string.Empty;
+		public string Password { get; set; } = string.Empty;
 
-        public List<Claim> GetClaims()
-        {
-            return new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, PrimaryPhoneNumber)
-            };
-        }
-    }
+		public List<Claim> GetClaims()
+		{
+			return new List<Claim>
+			{
+				new Claim(ClaimTypes.NameIdentifier, PrimaryPhoneNumber)
+			};
+		}
+	}
 }

@@ -1,14 +1,14 @@
-﻿using Alaiala_API.Data;
-using Alaiala_API.Helper;
-using Alaiala_API.Interfaces;
-using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using PieceOfCakeAPI.Data;
+using PieceOfCakeAPI.Helper;
+using PieceOfCakeAPI.Interfaces;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
-namespace Alaiala_API.Services
+namespace PieceOfCakeAPI.Services
 {
 	public static class AppServices
 	{
@@ -45,7 +45,7 @@ namespace Alaiala_API.Services
 				configuration.OperationFilter<SecurityRequirementsOperationFilter>();
 			});
 			Services.AddControllersServices();
-			
+
 			Services.AddAuthentication()
 			.AddJwtBearer(AuthenticationHelper.AppSchemas.Captain, options =>
 			{
@@ -117,7 +117,7 @@ namespace Alaiala_API.Services
 					{
 						await context.Response.WriteAsJsonAsync(new
 						{
-							StatusCode = context.Response.StatusCode,
+							context.Response.StatusCode,
 							Message = "Unhandled Internal Server Error!"
 						});
 					}

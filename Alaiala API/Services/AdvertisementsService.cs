@@ -1,18 +1,18 @@
-﻿using Alaiala_API.Interfaces;
-using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Advertisement;
-using Alaiala_API.ServicesIntrfaces;
+﻿using PieceOfCakeAPI.Interfaces;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Advertisement;
+using PieceOfCakeAPI.ServicesIntrfaces;
 
-namespace Alaiala_API.Services
+namespace PieceOfCakeAPI.Services
 {
-    public class AdvertisementsService : IRegisterService, IAdvertisementsService
+	public class AdvertisementsService : IRegisterService, IAdvertisementsService
 	{
-        private readonly ILogger<AdvertisementsService> _Logger;
+		private readonly ILogger<AdvertisementsService> _Logger;
 
-        public AdvertisementsService(ILogger<AdvertisementsService> logger)
-        {
-            _Logger = logger;
-        }
+		public AdvertisementsService(ILogger<AdvertisementsService> logger)
+		{
+			_Logger = logger;
+		}
 
 		public static void RegisterMe(IServiceCollection services)
 		{

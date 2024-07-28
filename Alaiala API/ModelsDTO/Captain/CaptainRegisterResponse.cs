@@ -1,12 +1,12 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Captain
+namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainRegisterResponse : IDtoResponse
-    {
-        public CaptainRegisterResponse()
-        {
-        }
+	public struct CaptainRegisterResponse : IDtoResponse
+	{
+		public CaptainRegisterResponse()
+		{
+		}
 
 		public enum ResponseState
 		{

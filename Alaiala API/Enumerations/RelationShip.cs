@@ -1,11 +1,11 @@
-﻿namespace Alaiala_API.Enumerations
+﻿namespace PieceOfCakeAPI.Enumerations
 {
-    public enum RelationShip
-    {
-        None            = 0,
-        Futher          = 1,
-        Son             = 2,
-        PaternalUncle   = 3,
-        MaternalUncle   = 4
-    }
+	public enum RelationShip
+	{
+		None = 0,
+		Futher = 1,
+		Son = 2,
+		PaternalUncle = 3,
+		MaternalUncle = 4
+	}
 }

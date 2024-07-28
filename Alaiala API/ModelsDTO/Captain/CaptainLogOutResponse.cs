@@ -1,11 +1,11 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Captain
+namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainLogOutResponse : IDtoResponse
-    {
-        public CaptainLogOutResponse()
-        {
-        }
-    }
+	public struct CaptainLogOutResponse : IDtoResponse
+	{
+		public CaptainLogOutResponse()
+		{
+		}
+	}
 }

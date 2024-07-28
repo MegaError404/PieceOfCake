@@ -1,13 +1,13 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Advertisement;
+﻿using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Advertisement;
 
-namespace Alaiala_API.ServicesIntrfaces
+namespace PieceOfCakeAPI.ServicesIntrfaces
 {
-    public interface IAdvertisementsService
-    {
-        public Task<ApiResponse<List<AdvertisementsGetRespone>>> GetAllAdvertisements();
-        public Task<ApiResponse<AdvertisementsAddRespone>> AddAdvertisement(AdvertisementsAddRequest request);
-        public Task<ApiResponse<AdvertisementsDeleteRespone>> DeleteAdvertisementById(int id);
+	public interface IAdvertisementsService
+	{
+		public Task<ApiResponse<List<AdvertisementsGetRespone>>> GetAllAdvertisements();
+		public Task<ApiResponse<AdvertisementsAddRespone>> AddAdvertisement(AdvertisementsAddRequest request);
+		public Task<ApiResponse<AdvertisementsDeleteRespone>> DeleteAdvertisementById(int id);
 
-    }
+	}
 }

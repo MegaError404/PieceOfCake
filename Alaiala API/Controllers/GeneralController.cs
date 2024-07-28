@@ -1,10 +1,10 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ServicesIntrfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ServicesIntrfaces;
 
-namespace Alaiala_API.Controllers
+namespace PieceOfCakeAPI.Controllers
 {
-    [ApiController]
+	[ApiController]
 	[Route("api/v1/[controller]")]
 	public class GeneralController : ControllerBase
 	{
@@ -12,10 +12,10 @@ namespace Alaiala_API.Controllers
 		private readonly IGeneralService _GeneralService;
 
 		public GeneralController(ILogger<GeneralController> logger, IGeneralService generalService)
-        {
+		{
 			_Logger = logger;
 			_GeneralService = generalService;
-        }
+		}
 
 		[HttpGet("GetWhatsAppSupportNumber")]
 		public async Task<ActionResult<string>> GetWhatsAppSupportNumber()

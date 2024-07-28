@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models
+namespace PieceOfCakeAPI.Models
 {
-    public class Advertisements
+	public class Advertisements
 	{
-        [Required,Key]
-        public int Id { get; set; } 
-        
-        [Required]
-        public Guid GUID { get; set; } = Guid.Empty;
+		[Required, Key]
+		public int Id { get; set; }
 
-        [Required]
-        public byte[] Photo { get; set; } 
+		[Required]
+		public Guid GUID { get; set; } = Guid.Empty;
 
-    }
+		[Required]
+		public byte[] Photo { get; set; }
+
+	}
 }

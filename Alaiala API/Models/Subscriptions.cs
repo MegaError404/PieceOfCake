@@ -1,26 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models
+namespace PieceOfCakeAPI.Models
 {
-    public class Subscriptions
+	public class Subscriptions
 	{
-        [Required,Key]
-        public int Id { get; set; }
-        
-        [Required]
-        public Guid GUID { get; set; } = Guid.Empty;
+		[Required, Key]
+		public int Id { get; set; }
 
-        [
-          Required,
-          MaxLength(100, ErrorMessage = "Max Length in Subscription Name 100 Character"),
-          MinLength(4, ErrorMessage = "Min Length in Subscription Name 4 Character")
-        ]
-        public string Name { get; set; } = string.Empty;
+		[Required]
+		public Guid GUID { get; set; } = Guid.Empty;
 
-        [Required]
-        public decimal Cost { get; set; } = decimal.Zero;
+		[
+		  Required,
+		  MaxLength(100, ErrorMessage = "Max Length in Subscription Name 100 Character"),
+		  MinLength(4, ErrorMessage = "Min Length in Subscription Name 4 Character")
+		]
+		public string Name { get; set; } = string.Empty;
 
-        [Required]
-        public int Duration { get; set; } = 0;
-    }
+		[Required]
+		public decimal Cost { get; set; } = decimal.Zero;
+
+		[Required]
+		public int Duration { get; set; } = 0;
+	}
 }

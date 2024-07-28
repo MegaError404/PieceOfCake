@@ -1,9 +1,9 @@
-﻿namespace Alaiala_API.Enumerations
+﻿namespace PieceOfCakeAPI.Enumerations
 {
 	public enum MaritalStatus
 	{
-		None		= 0,
-		Married		= 1,
-		Single		= 2
+		None = 0,
+		Married = 1,
+		Single = 2
 	}
 }

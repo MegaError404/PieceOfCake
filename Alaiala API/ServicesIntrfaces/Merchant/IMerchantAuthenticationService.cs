@@ -1,12 +1,12 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Merchant;
+﻿using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Merchant;
 
-namespace Alaiala_API.ServicesIntrfaces.Merchant
+namespace PieceOfCakeAPI.ServicesIntrfaces.Merchant
 {
-    public interface IMerchantAuthenticationService
-    {
-        public Task<ApiResponse<string>> Register(MerchantRegisterRequest request);
-        public Task<ApiResponse<string>> LogIn(MerchantLogInRequest request);
+	public interface IMerchantAuthenticationService
+	{
+		public Task<ApiResponse<string>> Register(MerchantRegisterRequest request);
+		public Task<ApiResponse<string>> LogIn(MerchantLogInRequest request);
 
-    }
+	}
 }

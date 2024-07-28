@@ -1,12 +1,12 @@
-﻿namespace Alaiala_API.ModelsDTO.Captain
+﻿namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainGetOrderResponse
-    {
-        public CaptainGetOrderResponse()
-        {
+	public struct CaptainGetOrderResponse
+	{
+		public CaptainGetOrderResponse()
+		{
 
-        }
+		}
 
 
-    }
+	}
 }

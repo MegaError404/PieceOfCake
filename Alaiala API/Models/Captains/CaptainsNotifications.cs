@@ -1,22 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models.Captains
+namespace PieceOfCakeAPI.Models.Captains
 {
-    public class CaptainsNotifications
-    {
-        [Required, Key]
-        public int Id { get; set; }
-        
-        [Required]
-        public Guid GUID { get; set; } = Guid.Empty;
+	public class CaptainsNotifications
+	{
+		[Required, Key]
+		public int Id { get; set; }
 
-        [Required(ErrorMessage = "Title Is Required")]
-        public string Title { get; set; } = string.Empty;
+		[Required]
+		public Guid GUID { get; set; } = Guid.Empty;
 
-        [Required(ErrorMessage = "Text Is Required")]
-        public string Text { get; set; } = string.Empty;
-        
-        [Required]
-        public Captains Captain { get; set; }
-    }
+		[Required(ErrorMessage = "Title Is Required")]
+		public string Title { get; set; } = string.Empty;
+
+		[Required(ErrorMessage = "Text Is Required")]
+		public string Text { get; set; } = string.Empty;
+
+		[Required]
+		public Captains Captain { get; set; }
+	}
 }

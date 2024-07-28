@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.ModelsDTO.BusinessActivitie
+namespace PieceOfCakeAPI.ModelsDTO.BusinessActivitie
 {
-    public class AddBusinessActivitieDto
-    {
-        public string Name { get; set; } = string.Empty;
-    }
+	public class AddBusinessActivitieDto
+	{
+		public string Name { get; set; } = string.Empty;
+	}
 }

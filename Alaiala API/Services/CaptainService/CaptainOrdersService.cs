@@ -1,55 +1,55 @@
-﻿using Alaiala_API.Data;
-using Alaiala_API.Enumerations;
-using Alaiala_API.Interfaces;
-using Alaiala_API.Models;
-using Alaiala_API.Models.NewFolder;
-using Alaiala_API.ModelsDTO.Captain;
-using Alaiala_API.ServicesIntrfaces.Captain;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PieceOfCakeAPI.Data;
+using PieceOfCakeAPI.Enumerations;
+using PieceOfCakeAPI.Interfaces;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.Models.Orders;
+using PieceOfCakeAPI.ModelsDTO.Captain;
+using PieceOfCakeAPI.ServicesIntrfaces.Captain;
 
-namespace Alaiala_API.Services.Captain
+namespace PieceOfCakeAPI.Services.CaptainService
 {
 	public class CaptainOrdersService : IRegisterService, ICaptainOrdersService
-    {
+	{
 		private readonly DataContext _DataContext;
 		ILogger<CaptainOrdersService> _Logger;
-        IMapper _Mapper;
+		IMapper _Mapper;
 
-        public CaptainOrdersService(DataContext dataContext, ILogger<CaptainOrdersService> logger, IMapper mapper)
-        {
-            _Logger = logger;
-            _Mapper = mapper;
-            _DataContext = dataContext;
-        }
+		public CaptainOrdersService(DataContext dataContext, ILogger<CaptainOrdersService> logger, IMapper mapper)
+		{
+			_Logger = logger;
+			_Mapper = mapper;
+			_DataContext = dataContext;
+		}
 
-        public static void RegisterMe(IServiceCollection services)
-        {
-            services.AddScoped<ICaptainOrdersService, CaptainOrdersService>();
-        }
+		public static void RegisterMe(IServiceCollection services)
+		{
+			services.AddScoped<ICaptainOrdersService, CaptainOrdersService>();
+		}
 
-        public async Task<ApiResponse<CaptainAcceptOrderResponse>> AcceptOrder(CaptainAcceptOrderRequest request)
-        {
-            ApiResponse<CaptainAcceptOrderResponse> responese = new();
+		public async Task<ApiResponse<CaptainAcceptOrderResponse>> AcceptOrder(CaptainAcceptOrderRequest request)
+		{
+			ApiResponse<CaptainAcceptOrderResponse> responese = new();
 
-            try
-            {
+			try
+			{
 				AcceptedOrders acceptedOrders = new();
 
 				var newOrders = await _DataContext.NewOrders.FirstOrDefaultAsync(o => o.GUID == request.OrderGUID);
 
 				if (newOrders is null)
-                {
-                    var redirectedOrder = await _DataContext.RedirectedOrders.FirstOrDefaultAsync(o => o.GUID == request.OrderGUID);
+				{
+					var redirectedOrder = await _DataContext.RedirectedOrders.FirstOrDefaultAsync(o => o.GUID == request.OrderGUID);
 
 					if (redirectedOrder is null)
-                    {
+					{
 						responese.Message = CaptainAcceptOrderResponse.ResponseState.OrderNotExistAnyMore.ToString();
-					    responese.Success = false;
-					    return responese;
-                    }
-                    else
-                    {
+						responese.Success = false;
+						return responese;
+					}
+					else
+					{
 						acceptedOrders.GUID = redirectedOrder.GUID;
 						acceptedOrders.OrderType = redirectedOrder.OrderType;
 						acceptedOrders.CreatingDateTime = redirectedOrder.CreatingDateTime;
@@ -60,9 +60,9 @@ namespace Alaiala_API.Services.Captain
 
 					}
 				}
-                else
-                {
-                    acceptedOrders.GUID = newOrders.GUID;
+				else
+				{
+					acceptedOrders.GUID = newOrders.GUID;
 					acceptedOrders.OrderType = newOrders.OrderType;
 					acceptedOrders.CreatingDateTime = newOrders.CreatingDateTime;
 					acceptedOrders.OrderCost = newOrders.OrderCost;
@@ -73,51 +73,51 @@ namespace Alaiala_API.Services.Captain
 				}
 
 				AcceptedOrders? maxOrder = await _DataContext.AcceptedOrders.OrderBy(order => order.Number).FirstOrDefaultAsync();
-                
-                if (maxOrder is null)
-                    maxOrder = new();
 
-                acceptedOrders.GUID = Guid.NewGuid();
-                acceptedOrders.Number = (Convert.ToInt64(maxOrder.Number) + 1).ToString();
+				if (maxOrder is null)
+					maxOrder = new();
+
+				acceptedOrders.GUID = Guid.NewGuid();
+				acceptedOrders.Number = (Convert.ToInt64(maxOrder.Number) + 1).ToString();
 				acceptedOrders.PaymentStatus = PaymentCases.Unpaid;
 				acceptedOrders.AcceptingDateTime = DateTime.Now;
-				
-			}
-            catch (Exception) 
-            {
-                throw;
-            }
 
-            return responese;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+			return responese;
 		}
 
-        public async Task<ApiResponse<CaptainCancelOrderResponse>> CancelOrder(CaptainCancelOrderRequest request)
-        {
-            throw new NotImplementedException();
-        }
+		public async Task<ApiResponse<CaptainCancelOrderResponse>> CancelOrder(CaptainCancelOrderRequest request)
+		{
+			throw new NotImplementedException();
+		}
 
-        public async Task<ApiResponse<CaptainDelivereOrderResponse>> DelivereOrder(CaptainDelivereOrderRequest request)
-        {
-            throw new NotImplementedException();
-        }
+		public async Task<ApiResponse<CaptainDelivereOrderResponse>> DelivereOrder(CaptainDelivereOrderRequest request)
+		{
+			throw new NotImplementedException();
+		}
 
-        public async Task<ApiResponse<List<CaptainGetOrderResponse>>> GetAllOrders()
-        {
-            ApiResponse<List<CaptainGetOrderResponse>> response = new();
+		public async Task<ApiResponse<List<CaptainGetOrderResponse>>> GetAllOrders()
+		{
+			ApiResponse<List<CaptainGetOrderResponse>> response = new();
 
-            return response;
-        }
+			return response;
+		}
 
-        public async Task<ApiResponse<CaptainGetOrderResponse>> GetOrderById(int id)
-        {
-            ApiResponse<CaptainGetOrderResponse> response = new();
+		public async Task<ApiResponse<CaptainGetOrderResponse>> GetOrderById(int id)
+		{
+			ApiResponse<CaptainGetOrderResponse> response = new();
 
-            return response;
-        }
+			return response;
+		}
 
-        public async Task<ApiResponse<CaptainRedirectOrderResponse>> RedirectOrder(CaptainRedirectOrderRequest request)
-        {
-            throw new NotImplementedException();
-        }
-    }
+		public async Task<ApiResponse<CaptainRedirectOrderResponse>> RedirectOrder(CaptainRedirectOrderRequest request)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

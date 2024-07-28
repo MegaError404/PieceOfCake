@@ -1,18 +1,18 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Advertisement;
-using Alaiala_API.ServicesIntrfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Advertisement;
+using PieceOfCakeAPI.ServicesIntrfaces;
 
-namespace Alaiala_API.Controllers
+namespace PieceOfCakeAPI.Controllers
 {
-    [ApiController]
+	[ApiController]
 	[Route("api/v1/[controller]")]
 	public class AdvertisementsController : ControllerBase
 	{
-        private readonly ILogger<AdvertisementsController> _Logger;
+		private readonly ILogger<AdvertisementsController> _Logger;
 		private readonly IAdvertisementsService _AdvertisementsService;
 		public AdvertisementsController(ILogger<AdvertisementsController> logger, IAdvertisementsService advertisementsService)
-        {
+		{
 			_Logger = logger;
 			_AdvertisementsService = advertisementsService;
 		}

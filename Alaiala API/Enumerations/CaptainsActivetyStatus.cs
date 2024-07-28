@@ -1,4 +1,4 @@
-﻿namespace Alaiala_API.Enumerations
+﻿namespace PieceOfCakeAPI.Enumerations
 {
 	// TODO : فهم تفاصبل كل من الحالات التي ستظهر للأدمن
 	public enum CaptainsActivetyStatus

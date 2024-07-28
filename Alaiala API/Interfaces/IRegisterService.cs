@@ -1,6 +1,5 @@
-﻿using Alaiala_API.ServicesIntrfaces.Captain;
-
-namespace Alaiala_API.Interfaces
+﻿
+namespace PieceOfCakeAPI.Interfaces
 {
 	public interface IRegisterService
 	{

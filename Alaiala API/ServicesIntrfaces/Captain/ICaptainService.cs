@@ -1,9 +1,7 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Captain;
-
-namespace Alaiala_API.ServicesIntrfaces.Captain
+﻿
+namespace PieceOfCakeAPI.ServicesIntrfaces.Captain
 {
-    public interface ICaptainService
-    {
-    }
+	public interface ICaptainService
+	{
+	}
 }

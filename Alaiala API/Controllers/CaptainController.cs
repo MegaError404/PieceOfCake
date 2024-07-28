@@ -1,34 +1,34 @@
-﻿using Alaiala_API.Helper;
-using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Captain;
-using Alaiala_API.ServicesIntrfaces.Captain;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PieceOfCakeAPI.Helper;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Captain;
+using PieceOfCakeAPI.ServicesIntrfaces.Captain;
 
-namespace Alaiala_API.Controllers
+namespace PieceOfCakeAPI.Controllers
 {
 	[Authorize(AuthenticationSchemes = AuthenticationHelper.AppSchemas.Captain)]
-    [ApiController]
-    [Route("api/v1/[controller]")]
-    public class CaptainController : ControllerBase
-    {
-        private readonly ILogger<CaptainController> _Logger;
-        private readonly ICaptainService _CaptainService;
-        private readonly ICaptainAuthenticationService _captainAuthenticationService;
-        private readonly ICaptainOrdersService _CaptainOrdersService;
+	[ApiController]
+	[Route("api/v1/[controller]")]
+	public class CaptainController : ControllerBase
+	{
+		private readonly ILogger<CaptainController> _Logger;
+		private readonly ICaptainService _CaptainService;
+		private readonly ICaptainAuthenticationService _captainAuthenticationService;
+		private readonly ICaptainOrdersService _CaptainOrdersService;
 
-        public CaptainController(ILogger<CaptainController> logger, ICaptainService captainService, ICaptainAuthenticationService captainAuthenticationService, ICaptainOrdersService captainOrdersService)
-        {
-            _Logger = logger;
+		public CaptainController(ILogger<CaptainController> logger, ICaptainService captainService, ICaptainAuthenticationService captainAuthenticationService, ICaptainOrdersService captainOrdersService)
+		{
+			_Logger = logger;
 			_CaptainService = captainService;
-            _captainAuthenticationService = captainAuthenticationService;
+			_captainAuthenticationService = captainAuthenticationService;
 			_CaptainOrdersService = captainOrdersService;
 		}
 
 		[AllowAnonymous]
 		[HttpPost("Register")]
-        public async Task<ActionResult<CaptainRegisterResponse>> Register(CaptainRegisterRequest request)
-        {
+		public async Task<ActionResult<CaptainRegisterResponse>> Register(CaptainRegisterRequest request)
+		{
 			ApiResponse<CaptainRegisterResponse> response = await _captainAuthenticationService.Register(request);
 
 			if (!response.Success)
@@ -42,18 +42,18 @@ namespace Alaiala_API.Controllers
 
 		[AllowAnonymous]
 		[HttpPost("LogIn")]
-        public async Task<ActionResult<CaptainLogInResponse>> LogIn(CaptainLogInRequest request)
-        {
+		public async Task<ActionResult<CaptainLogInResponse>> LogIn(CaptainLogInRequest request)
+		{
 			ApiResponse<CaptainLogInResponse> response = await _captainAuthenticationService.LogIn(request);
 
-            if (!response.Success) 
-            {
-                Response.Headers.Append("ErrorMessage", response.Message);
-                return BadRequest();
+			if (!response.Success)
+			{
+				Response.Headers.Append("ErrorMessage", response.Message);
+				return BadRequest();
 			}
 
 			return Ok(response.Data);
-        }
+		}
 
 		[HttpGet("GetAllOrders")]
 		public async Task<ActionResult<List<CaptainGetOrderResponse>>> GetAllOrders()

@@ -1,4 +1,4 @@
-﻿namespace Alaiala_API.Interfaces
+﻿namespace PieceOfCakeAPI.Interfaces
 {
 	public interface IDtoResponse
 	{

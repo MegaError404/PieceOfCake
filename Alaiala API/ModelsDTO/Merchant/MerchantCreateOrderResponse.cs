@@ -1,12 +1,12 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Merchant
+namespace PieceOfCakeAPI.ModelsDTO.Merchant
 {
-    public struct MerchantCreateOrderResponse : IDtoResponse
-    {
-        public MerchantCreateOrderResponse()
-        {
+	public struct MerchantCreateOrderResponse : IDtoResponse
+	{
+		public MerchantCreateOrderResponse()
+		{
 
-        }
-    }
+		}
+	}
 }

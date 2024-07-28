@@ -1,4 +1,4 @@
-﻿namespace Alaiala_API.Enumerations
+﻿namespace PieceOfCakeAPI.Enumerations
 {
 	public enum OrderTypes
 	{

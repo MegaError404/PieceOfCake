@@ -1,8 +1,8 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Advertisement
+namespace PieceOfCakeAPI.ModelsDTO.Advertisement
 {
-    public class AdvertisementsAddRequest : IDtoResponse
-    {
-    }
+	public class AdvertisementsAddRequest : IDtoResponse
+	{
+	}
 }

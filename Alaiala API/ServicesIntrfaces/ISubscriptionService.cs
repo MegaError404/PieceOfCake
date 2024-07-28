@@ -1,14 +1,14 @@
-﻿using Alaiala_API.Models;
-using Alaiala_API.ModelsDTO.Subscription;
+﻿using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ModelsDTO.Subscription;
 
-namespace Alaiala_API.ServicesIntrfaces
+namespace PieceOfCakeAPI.ServicesIntrfaces
 {
-    public interface ISubscriptionService
-    {
-        Task<ApiResponse<List<GetSubscriptionDto>>> GetAllSubscription();
-        Task<ApiResponse<GetSubscriptionDto>> GetSubscriptionById(int id);
-        Task<ApiResponse<GetSubscriptionDto>> AddSubscription(AddSubscriptionDto addSubscriptionDto);
-        Task<ApiResponse<GetSubscriptionDto>> UpdateSubscription(UpdateSubscriptionDto updateSubscriptionDto);
-        Task<ApiResponse<List<GetSubscriptionDto>>> DeleteById(int id);
-    }
+	public interface ISubscriptionService
+	{
+		Task<ApiResponse<List<GetSubscriptionDto>>> GetAllSubscription();
+		Task<ApiResponse<GetSubscriptionDto>> GetSubscriptionById(int id);
+		Task<ApiResponse<GetSubscriptionDto>> AddSubscription(AddSubscriptionDto addSubscriptionDto);
+		Task<ApiResponse<GetSubscriptionDto>> UpdateSubscription(UpdateSubscriptionDto updateSubscriptionDto);
+		Task<ApiResponse<List<GetSubscriptionDto>>> DeleteById(int id);
+	}
 }

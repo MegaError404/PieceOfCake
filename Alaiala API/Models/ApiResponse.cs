@@ -1,6 +1,6 @@
-﻿namespace Alaiala_API.Models
+﻿namespace PieceOfCakeAPI.Models
 {
-    public class ApiResponse<T>
+	public class ApiResponse<T>
 	{
 		public T Data { get; set; }
 		public bool Success { get; set; } = true;

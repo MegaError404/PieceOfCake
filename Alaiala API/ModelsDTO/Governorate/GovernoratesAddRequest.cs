@@ -1,11 +1,11 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.ModelsDTO.Governorate
+namespace PieceOfCakeAPI.ModelsDTO.Governorate
 {
-    public class GovernoratesAddRequest : IDtoRequest
-    {
-        public string Name { get; set; } = string.Empty;
-        public decimal OrderDeliveryCost { get; set; } = decimal.Zero;
-    }
+	public class GovernoratesAddRequest : IDtoRequest
+	{
+		public string Name { get; set; } = string.Empty;
+		public decimal OrderDeliveryCost { get; set; } = decimal.Zero;
+	}
 }

@@ -1,15 +1,15 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Captain
+namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainAcceptOrderRequest : IDtoRequest
-    {
-        public CaptainAcceptOrderRequest()
-        {
+	public struct CaptainAcceptOrderRequest : IDtoRequest
+	{
+		public CaptainAcceptOrderRequest()
+		{
 
-        }
+		}
 
-        public string Token { get; set; } = string.Empty;
-        public Guid OrderGUID { get; set; } = Guid.Empty;
+		public string Token { get; set; } = string.Empty;
+		public Guid OrderGUID { get; set; } = Guid.Empty;
 	}
 }

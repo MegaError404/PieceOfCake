@@ -1,13 +1,13 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Captain
+namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainAcceptOrderResponse : IDtoResponse
-    {
-        public CaptainAcceptOrderResponse()
-        {
+	public struct CaptainAcceptOrderResponse : IDtoResponse
+	{
+		public CaptainAcceptOrderResponse()
+		{
 
-        }
+		}
 
 
 

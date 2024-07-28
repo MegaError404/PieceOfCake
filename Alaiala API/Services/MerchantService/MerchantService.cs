@@ -1,13 +1,13 @@
-﻿using Alaiala_API.Interfaces;
-using Alaiala_API.ServicesIntrfaces.Merchant;
+﻿using PieceOfCakeAPI.Interfaces;
+using PieceOfCakeAPI.ServicesIntrfaces.Merchant;
 
-namespace Alaiala_API.Services.Merchant
+namespace PieceOfCakeAPI.Services.MerchantService
 {
-    public class MerchantService : IRegisterService, IMerchantService
-    {
-        public static void RegisterMe(IServiceCollection services)
-        {
-            services.AddScoped<IMerchantService, MerchantService>();
-        }
-    }
+	public class MerchantService : IRegisterService, IMerchantService
+	{
+		public static void RegisterMe(IServiceCollection services)
+		{
+			services.AddScoped<IMerchantService, MerchantService>();
+		}
+	}
 }

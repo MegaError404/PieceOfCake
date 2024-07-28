@@ -1,19 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alaiala_API.Models.Captains
+namespace PieceOfCakeAPI.Models.Captains
 {
-    public class CaptainsNotes
-    {
-        [Required, Key]
-        public int Id { get; set; }
+	public class CaptainsNotes
+	{
+		[Required, Key]
+		public int Id { get; set; }
 
-        [Required]
+		[Required]
 		public Guid GUID { get; set; } = Guid.Empty;
 
-		[Required(ErrorMessage ="Note Is Required")]
+		[Required(ErrorMessage = "Note Is Required")]
 		public string Note { get; set; } = string.Empty;
 
-        [Required]
-        public Captains Captain { get; set; }
-    }
+		[Required]
+		public Captains Captain { get; set; }
+	}
 }

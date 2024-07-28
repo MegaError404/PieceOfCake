@@ -1,9 +1,9 @@
-﻿namespace Alaiala_API.ModelsDTO.Merchant
+﻿namespace PieceOfCakeAPI.ModelsDTO.Merchant
 {
-    public struct MerchantRegisterResponse
-    {
-        public MerchantRegisterResponse()
-        {
-        }
-    }
+	public struct MerchantRegisterResponse
+	{
+		public MerchantRegisterResponse()
+		{
+		}
+	}
 }

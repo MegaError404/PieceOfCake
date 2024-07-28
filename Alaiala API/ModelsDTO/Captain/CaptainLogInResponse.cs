@@ -1,14 +1,14 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Captain
+namespace PieceOfCakeAPI.ModelsDTO.Captain
 {
-    public struct CaptainLogInResponse : IDtoResponse
-    {
-        public CaptainLogInResponse()
-        {
+	public struct CaptainLogInResponse : IDtoResponse
+	{
+		public CaptainLogInResponse()
+		{
 
-        }
-        public string Token { get; set; } = string.Empty;
+		}
+		public string Token { get; set; } = string.Empty;
 
 		public enum ResponseState
 		{
@@ -18,5 +18,5 @@ namespace Alaiala_API.ModelsDTO.Captain
 			InvalidPassword = 4
 		}
 	}
-    
+
 }

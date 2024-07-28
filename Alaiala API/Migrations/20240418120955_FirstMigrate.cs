@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Alaiala_API.Migrations
+namespace PieceOfCake_API.Migrations
 {
     /// <inheritdoc />
     public partial class FirstMigrate : Migration

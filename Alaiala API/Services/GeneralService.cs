@@ -1,18 +1,18 @@
-﻿using Alaiala_API.Interfaces;
-using Alaiala_API.Models;
-using Alaiala_API.ServicesIntrfaces;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using PieceOfCakeAPI.Interfaces;
+using PieceOfCakeAPI.Models;
+using PieceOfCakeAPI.ServicesIntrfaces;
 
-namespace Alaiala_API.Services
+namespace PieceOfCakeAPI.Services
 {
-    public class GeneralService : IRegisterService , IGeneralService
+	public class GeneralService : IRegisterService, IGeneralService
 	{
 
-        private ILogger<GeneralService> _Logger;
-        public GeneralService(ILogger<GeneralService> logger)
-        {
-            _Logger = logger;
-        }
+		private ILogger<GeneralService> _Logger;
+		public GeneralService(ILogger<GeneralService> logger)
+		{
+			_Logger = logger;
+		}
 
 		public static void RegisterMe(IServiceCollection services)
 		{

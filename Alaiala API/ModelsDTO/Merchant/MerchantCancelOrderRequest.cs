@@ -1,13 +1,13 @@
-﻿using Alaiala_API.Interfaces;
+﻿using PieceOfCakeAPI.Interfaces;
 
-namespace Alaiala_API.ModelsDTO.Merchant
+namespace PieceOfCakeAPI.ModelsDTO.Merchant
 {
-    public struct MerchantCancelOrderRequest : IDtoRequest
-    {
-        public MerchantCancelOrderRequest()
-        {
+	public struct MerchantCancelOrderRequest : IDtoRequest
+	{
+		public MerchantCancelOrderRequest()
+		{
 
-        }
+		}
 
-    }
+	}
 }
